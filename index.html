@@ -9,7 +9,7 @@
   <meta name="author" content="">
 
   <title>MrSpwn</title>
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -81,7 +81,17 @@
       <div class="my-auto">
         <h2 class="mb-5">Chat Commands</h2>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="subheading mb-5">
+          <p>Filters</p>
+          <button id="btn-filter-all" class="btn btn-dark">All Commands</button>
+          <button id="btn-filter-animation" class="btn btn-dark">Animation Commands</button>
+          <button id="btn-filter-text" class="btn btn-dark">Text Commands</button>
+          <button id="btn-filter-action" class="btn btn-dark">Action Commands</button>
+        </div>
+        
+        <div class="my-shuffle-container">
+        
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["animation"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!brave</h3>
             <div class="subheading mb-3">Type: Animation</div>
@@ -89,7 +99,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!commands</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -97,7 +107,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!enter</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -105,7 +115,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!entries</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -113,7 +123,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!giveaway</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -121,7 +131,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["animation"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!ko</h3>
             <div class="subheading mb-3">Type: Animation</div>
@@ -129,7 +139,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!leaderboard</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -137,7 +147,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!level</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -145,7 +155,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["animation"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!live</h3>
             <div class="subheading mb-3">Type: Animation</div>
@@ -153,7 +163,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!multistream</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -163,7 +173,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["action"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!music</h3>
             <div class="subheading mb-3">Type: Action</div>
@@ -171,7 +181,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["action"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!nextsong</h3>
             <div class="subheading mb-3">Type: Action</div>
@@ -179,7 +189,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["animation"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!potato</h3>
             <div class="subheading mb-3">Type: Animation</div>
@@ -187,7 +197,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!potatoes</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -195,15 +205,15 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["animation"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!salty</h3>
-            <div class="subheading mb-3">Type: Text</div>
+            <div class="subheading mb-3">Type: Animation</div>
             <p>Trigger the Salty animation!</p>
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!shop</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -211,7 +221,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!social</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -221,7 +231,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!song</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -229,7 +239,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!specs</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -237,7 +247,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["animation"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!tom</h3>
             <div class="subheading mb-3">Type: Animation</div>
@@ -245,7 +255,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["animation"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!toxic</h3>
             <div class="subheading mb-3">Type: Animation</div>
@@ -253,7 +263,7 @@
           </div>
         </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
           <div class="resume-content mr-auto">
             <h3 class="mb-0 command-heading">!uptime</h3>
             <div class="subheading mb-3">Type: Text</div>
@@ -261,7 +271,10 @@
           </div>
         </div>
 
+        <div class="col-1@sm my-sizer-element"></div>
+
       </div>
+    </div>
     </section>
   </div>
 
@@ -274,6 +287,35 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/resume.min.js"></script>
+
+  <!-- shufflejs -->
+  <script src="vendor/shufflejs/shuffle.min.js"></script>
+  <script>
+    var Shuffle = window.Shuffle;
+    var element = document.querySelector('.my-shuffle-container');
+    var sizer = element.querySelector('.my-sizer-element');
+
+    var shuffleInstance = new Shuffle(element, {
+      itemSelector: '.command-item',
+      sizer: sizer
+    });
+
+    $("#btn-filter-all").click(function () {
+      shuffleInstance.filter();
+    });
+
+    $("#btn-filter-animation").click(function () {
+      shuffleInstance.filter('animation');
+    });
+
+    $("#btn-filter-text").click(function () {
+      shuffleInstance.filter('text');
+    });
+
+    $("#btn-filter-action").click(function () {
+      shuffleInstance.filter('action');
+    });
+  </script>
 
 </body>
 

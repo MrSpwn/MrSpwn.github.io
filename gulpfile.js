@@ -38,6 +38,11 @@ gulp.task('vendor', function() {
     ])
     .pipe(gulp.dest('./vendor/jquery-easing'))
 
+    // ShuffleJs
+  gulp.src([
+    './node_modules/shufflejs/dist/*'
+  ])
+  .pipe(gulp.dest('./vendor/shufflejs'))
 });
 
 // Compile SCSS
