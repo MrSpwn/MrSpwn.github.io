@@ -9,8 +9,7 @@ var pkg = require('./package.json');
 var browserSync = require('browser-sync').create();
 
 // Copy third party libraries from /node_modules into /vendor
-gulp.task('vendor', function() {
-
+gulp.task('vendor', gulp.series([], function() {
   // Bootstrap
   gulp.src([
       './node_modules/bootstrap/dist/**/*',
@@ -43,10 +42,10 @@ gulp.task('vendor', function() {
     './node_modules/shufflejs/dist/*'
   ])
   .pipe(gulp.dest('./vendor/shufflejs'))
-});
+}));
 
 // Compile SCSS
-gulp.task('css:compile', function() {
+gulp.task('css:compile', gulp.series([], function() {
   return gulp.src('./scss/**/*.scss')
     .pipe(sass.sync({
       outputStyle: 'expanded'
@@ -56,10 +55,10 @@ gulp.task('css:compile', function() {
       cascade: false
     }))
     .pipe(gulp.dest('./css'))
-});
+}));
 
 // Minify CSS
-gulp.task('css:minify', ['css:compile'], function() {
+gulp.task('css:minify', gulp.series(['css:compile'], function() {
   return gulp.src([
       './css/*.css',
       '!./css/*.min.css'
@@ -70,13 +69,13 @@ gulp.task('css:minify', ['css:compile'], function() {
     }))
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.stream());
-});
+}));
 
 // CSS
-gulp.task('css', ['css:compile', 'css:minify']);
+gulp.task('css', gulp.series(['css:compile', 'css:minify']));
 
 // Minify JavaScript
-gulp.task('js:minify', function() {
+gulp.task('js:minify', gulp.series([], function() {
   return gulp.src([
       './js/*.js',
       '!./js/*.min.js'
@@ -87,26 +86,32 @@ gulp.task('js:minify', function() {
     }))
     .pipe(gulp.dest('./js'))
     .pipe(browserSync.stream());
-});
+}));
 
 // JS
-gulp.task('js', ['js:minify']);
+gulp.task('js', gulp.series(['js:minify']));
 
 // Default task
-gulp.task('default', ['css', 'js', 'vendor']);
+gulp.task('default', gulp.series(['css', 'js', 'vendor']));
 
 // Configure the browserSync task
-gulp.task('browserSync', function() {
-  browserSync.init({
+gulp.task('browserSync', gulp.series([], function() {
+  var files = [
+    '*.html',
+    'css/**/*.css',
+    'js/**/*.js',
+    'sass/**/*.scss'
+ ];
+
+ browserSync.init(files, {
     server: {
-      baseDir: "./"
+       baseDir: './'
     }
-  });
-});
+ });
+}));
 
 // Dev task
-gulp.task('dev', ['css', 'js', 'browserSync'], function() {
+gulp.task('dev', gulp.series(['css', 'js', 'browserSync'], function() {
   gulp.watch('./scss/*.scss', ['css']);
   gulp.watch('./js/*.js', ['js']);
-  gulp.watch('./*.html', browserSync.reload);
-});
+}));
