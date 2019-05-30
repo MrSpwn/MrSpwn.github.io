@@ -87,10 +87,12 @@
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="commands">
       <div class="my-auto">
         <h2 class="mb-5">Chat Commands</h2>
+        <h4 class="mb-5">Note: Animation commands are follower only</h4>
 
         <div class="subheading mb-5">
           <p>Filters</p>
           <button id="btn-filter-all" class="btn btn-dark">All Commands</button>
+          <button id="btn-filter-subs" class="btn btn-dark">Twitch Subscriber Commands</button>
           <button id="btn-filter-animation" class="btn btn-dark">Animation Commands</button>
           <button id="btn-filter-text" class="btn btn-dark">Text Commands</button>
           <button id="btn-filter-action" class="btn btn-dark">Action Commands</button>
@@ -98,6 +100,14 @@
         </div>
 
         <div class="my-shuffle-container">
+          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["subscriber", "animation"]'>
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0 command-heading">![your_username]</h3>
+              <div class="subheading mb-3">Type: Twitch Subscriber, Animation</div>
+              <p>Subscriber command for a special animation! Replace [your_username] with your Twitch username (e.g. !mrspwn)</p>
+            </div>
+          </div>
+
           <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["action"]'>
             <div class="resume-content mr-auto">
               <h3 class="mb-0 command-heading">!clip</h3>
@@ -122,51 +132,11 @@
             </div>
           </div>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["action"]'>
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0 command-heading">!enter</h3>
-              <div class="subheading mb-3">Type: Action</div>
-              <p>Enter yourself into the current giveaway!</p>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0 command-heading">!entries</h3>
-              <div class="subheading mb-3">Type: Text</div>
-              <p>Get the current number of entries you have to the giveaway!</p>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0 command-heading">!giveaway</h3>
-              <div class="subheading mb-3">Type: Text</div>
-              <p>Get the current giveaway info!</p>
-            </div>
-          </div>
-
           <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["animation"]'>
             <div class="resume-content mr-auto">
               <h3 class="mb-0 command-heading">!ko</h3>
               <div class="subheading mb-3">Type: Animation</div>
               <p>Trigger the KO animation!</p>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0 command-heading">!leaderboard</h3>
-              <div class="subheading mb-3">Type: Text</div>
-              <p>Get a link to the chat leaderboard!</p>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0 command-heading">!level</h3>
-              <div class="subheading mb-3">Type: Text</div>
-              <p>Show your current chat rank!</p>
             </div>
           </div>
 
@@ -182,17 +152,8 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0 command-heading">!multistream</h3>
               <div class="subheading mb-3">Type: Text</div>
-              <p>Watch both streamer's perspectives at the same time! This command is mod only. This command is used by
-                typing !multistream [streamer] [platform] where [streamer] is the username of the other streamer and
-                [platform] is the platform they are streaming on.</p>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0 command-heading">!hunt</h3>
-              <div class="subheading mb-3">Type: Text</div>
-              <p>Get a link to the latest hunt patch notes.</p>
+              <p>MOD ONLY | Watch both streamer's perspectives at the same time! This command is used by
+                typing !multistream [streamer] where [streamer] is the username of the other streamer.</p>
             </div>
           </div>
 
@@ -209,17 +170,9 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0 command-heading">!music</h3>
               <div class="subheading mb-3">Type: Action</div>
-              <p>Will toggle the music, play if paused, pause if playing! (This command is mod only).</p>
+              <p>MOD ONLY | Will toggle the music, play if paused, pause if playing!</p>
             </div>
           </div>
-
-          <!-- <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["action"]'>
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0 command-heading">!nextsong</h3>
-              <div class="subheading mb-3">Type: Action</div>
-              <p>This will skip the current song and move on to another one! (This command has a 5 minute cooldown).</p>
-            </div>
-          </div> -->
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["animation"]'>
             <div class="resume-content mr-auto">
@@ -245,19 +198,11 @@
             </div>
           </div>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0 command-heading">!shop</h3>
-              <div class="subheading mb-3">Type: Text</div>
-              <p>Get a link to see all the items in MrSpwn's shop!</p>
-            </div>
-          </div>
-
           <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text", "mod"]'>
             <div class="resume-content mr-auto">
               <h3 class="mb-0 command-heading">!shoutout</h3>
               <div class="subheading mb-3">Type: Text</div>
-              <p>This command is mod only. Give a shoutout to a fellow streamer/content creator. Usage is !shoutout
+              <p>MOD ONLY | Give a shoutout to a fellow streamer/content creator. Usage is !shoutout
                 [username] where [username] is the username of the streamer/content creator on Twitch.</p>
             </div>
           </div>
@@ -266,9 +211,39 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0 command-heading">!social</h3>
               <div class="subheading mb-3">Type: Text</div>
-              <p>Get all of MrSpwn's social info! Type !social to get most of my social platforms. Type !social
-                [platform] where [platform] is the platform you want a link for. For example, type !social twitter to
-                get my Twitter link!</p>
+              <p>Get all of MrSpwn's social info!</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0 command-heading">!discord</h3>
+              <div class="subheading mb-3">Type: Text</div>
+              <p>Get a link to the Discord server!</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0 command-heading">!twitter</h3>
+              <div class="subheading mb-3">Type: Text</div>
+              <p>Get a link to MrSpwn's Twitter!</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0 command-heading">!youtube</h3>
+              <div class="subheading mb-3">Type: Text</div>
+              <p>Get a link to MrSpwn's YouTube!</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0 command-heading">!facebook</h3>
+              <div class="subheading mb-3">Type: Text</div>
+              <p>Get a link to MrSpwn's Facebook!</p>
             </div>
           </div>
 
@@ -284,7 +259,7 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0 command-heading">!specs</h3>
               <div class="subheading mb-3">Type: Text</div>
-              <p>Checkout MrSpwn's current gaming PC specs!</p>
+              <p>Get a link to see MrSpwn's current gaming and streaming PC specs!</p>
             </div>
           </div>
 
@@ -292,7 +267,7 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0 command-heading">!tip</h3>
               <div class="subheading mb-3">Type: Text</div>
-              <p>Get a link to my tip page!</p>
+              <p>Get a link to MrSpwn's tip page!</p>
             </div>
           </div>
 
@@ -333,6 +308,22 @@
               <h3 class="mb-0 command-heading">!wow</h3>
               <div class="subheading mb-3">Type: Animation</div>
               <p>Triggers the Owen Wilson wow animation!</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0 command-heading">!community</h3>
+              <div class="subheading mb-3">Type: Text</div>
+              <p>Get information on what community day is and how to enter the queue to play with MrSpwn!</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5 command-item" data-groups='["text"]'>
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0 command-heading">!lurk</h3>
+              <div class="subheading mb-3">Type: Text</div>
+              <p>Thanks for lurking :)</p>
             </div>
           </div>
 
@@ -436,6 +427,10 @@
 
     $("#btn-filter-all").click(function () {
       shuffleInstance.filter();
+    });
+
+    $("#btn-filter-subs").click(function () {
+      shuffleInstance.filter('subscriber');
     });
 
     $("#btn-filter-animation").click(function () {
