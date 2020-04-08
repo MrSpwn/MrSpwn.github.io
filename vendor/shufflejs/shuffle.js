@@ -1,8 +1,8 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global.Shuffle = factory());
-}(this, (function () { 'use strict';
+  (global = global || self, global.Shuffle = factory());
+}(this, function () { 'use strict';
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -138,6 +138,8 @@
   };
 
   var tinyEmitter = E;
+  var TinyEmitter = E;
+  tinyEmitter.TinyEmitter = TinyEmitter;
 
   var proto = typeof Element !== 'undefined' ? Element.prototype : {};
   var vendor = proto.matches
@@ -338,7 +340,7 @@
     HIDDEN: 'shuffle-item--hidden'
   };
 
-  var id$1 = 0;
+  var id = 0;
 
   var ShuffleItem =
   /*#__PURE__*/
@@ -346,8 +348,8 @@
     function ShuffleItem(element) {
       _classCallCheck(this, ShuffleItem);
 
-      id$1 += 1;
-      this.id = id$1;
+      id += 1;
+      this.id = id;
       this.element = element;
       /**
        * Used to separate items for layout and shrink.
@@ -433,7 +435,7 @@
       top: 0,
       left: 0,
       visibility: 'visible',
-      'will-change': 'transform'
+      willChange: 'transform'
     },
     VISIBLE: {
       before: {
@@ -531,7 +533,13 @@
     // Determines which property of each item in the array is passed to the
     // sorting method.
     key: 'element'
-  }; // You can return `undefined` from the `by` function to revert to DOM order.
+  };
+  /**
+   * You can return `undefined` from the `by` function to revert to DOM order.
+   * @param {Array<T>} arr Array to sort.
+   * @param {SortOptions} options Sorting options.
+   * @return {Array<T>}
+   */
 
   function sorter(arr, options) {
     var opts = Object.assign({}, defaults, options);
@@ -865,7 +873,7 @@
   } // Used for unique instance variables
 
 
-  var id$2 = 0;
+  var id$1 = 0;
 
   var Shuffle =
   /*#__PURE__*/
@@ -911,8 +919,8 @@
       }
 
       _this.element = el;
-      _this.id = 'shuffle_' + id$2;
-      id$2 += 1;
+      _this.id = 'shuffle_' + id$1;
+      id$1 += 1;
 
       _this._init();
 
@@ -1321,7 +1329,7 @@
           calculatedColumns = Math.round(calculatedColumns);
         }
 
-        this.cols = Math.max(Math.floor(calculatedColumns), 1);
+        this.cols = Math.max(Math.floor(calculatedColumns || 0), 1);
         this.containerWidth = containerWidth;
         this.colWidth = columnWidth;
       }
@@ -1717,12 +1725,12 @@
        * The magic. This is what makes the plugin 'shuffle'
        * @param {string|string[]|function(Element):boolean} [category] Category to filter by.
        *     Can be a function, string, or array of strings.
-       * @param {Object} [sortObj] A sort object which can sort the visible set
+       * @param {SortOptions} [sortOptions] A sort object which can sort the visible set
        */
 
     }, {
       key: "filter",
-      value: function filter(category, sortObj) {
+      value: function filter(category, sortOptions) {
         if (!this.isEnabled) {
           return;
         }
@@ -1740,11 +1748,11 @@
         this._updateItemCount(); // Update transforms on visible elements so they will animate to their new positions.
 
 
-        this.sort(sortObj);
+        this.sort(sortOptions);
       }
       /**
        * Gets the visible elements, sorts them, and passes them to layout.
-       * @param {Object} [sortOptions] The options object to pass to `sorter`.
+       * @param {SortOptions} [sortOptions] The options object to pass to `sorter`.
        */
 
     }, {
@@ -2178,5 +2186,5 @@
 
   return Shuffle;
 
-})));
+}));
 //# sourceMappingURL=shuffle.js.map

@@ -38,7 +38,7 @@ gulp.task('vendor', gulp.series([], function() {
     .pipe(gulp.dest('./vendor/jquery-easing'))
 
     // ShuffleJs
-  gulp.src([
+  return gulp.src([
     './node_modules/shufflejs/dist/*'
   ])
   .pipe(gulp.dest('./vendor/shufflejs'))
